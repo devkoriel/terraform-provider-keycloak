@@ -63,7 +63,7 @@ func getAttributeToRoleIdentityProviderMapperFromData(data *schema.ResourceData,
 	if err != nil {
 		return nil, handleNotFoundError(err, data)
 	}
-	rec.IdentityProviderMapper = fmt.Sprintf("%s-role-idp-mapper", identityProvider.ProviderId)
+	rec.IdentityProviderMapper = fmt.Sprintf("%s-advanced-role-idp-mapper", identityProvider.ProviderId)
 	rec.Config = &keycloak.IdentityProviderMapperConfig{
 		Role:        data.Get("role").(string),
 		ExtraConfig: extraConfig,
